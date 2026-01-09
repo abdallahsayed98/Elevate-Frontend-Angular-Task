@@ -1,10 +1,11 @@
 import { Component, signal, inject, OnInit, DestroyRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { Post } from '../post.model';
 
 @Component({
   selector: 'app-issues-list',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './issues-list.component.html',
   styleUrl: './issues-list.component.scss'
 })

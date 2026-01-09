@@ -7,11 +7,9 @@
   }
 
   @for (post of posts(); track $index) {
-    <div>
+    <a routerLink='/issues/{{post.id}}' routerLinkActive="active">
       <h4>Post: {{post.id}}</h4>
       <h5>Title: {{post.title}}</h5>
-      <p>{{post.body}}</p>
-      <h5>User ID: {{post.userId}}</h5>
-    </div>
+    </a>
   }
 </div>
