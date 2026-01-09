@@ -9,6 +9,22 @@
   <div>
     <button routerLink="/issues/new">New Issue</button>
   </div>
+
+  <div style="border: 1px solid black;">
+      @if (posts()) {
+        <div>
+          <label for="search">Search </label>
+          <input type="text" id="search" name="search" [(ngModel)]="searchedTitle" (change)="searchIssue()">
+        </div>
+        @if (searchedPost) {
+          <a routerLink='/issues/{{searchedPost.id}}' routerLinkActive="active">
+            <h4>Post: {{searchedPost.id}}</h4>
+            <h5>Title: {{searchedPost.title}}</h5>
+          </a>
+        }
+      }
+  </div>
+
   @for (post of posts(); track $index) {
     <a routerLink='/issues/{{post.id}}' routerLinkActive="active">
       <h4>Post: {{post.id}}</h4>

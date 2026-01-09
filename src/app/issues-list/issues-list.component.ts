@@ -1,15 +1,19 @@
 import { Component, signal, inject, OnInit, DestroyRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { Post } from '../post.model';
 
 @Component({
   selector: 'app-issues-list',
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule],
   templateUrl: './issues-list.component.html',
   styleUrl: './issues-list.component.scss'
 })
 export class IssuesListComponent implements OnInit {
+  searchedTitle:string = '';
+  searchedPost:any;
+
   posts = signal<Post[] | undefined>(undefined);
   isFetching = signal(false);
   error = signal('');
@@ -33,5 +37,9 @@ export class IssuesListComponent implements OnInit {
     this.destroyRef.onDestroy(()=>{
       subscribition.unsubscribe();
     })
+  }
+
+  searchIssue(){
+    this.searchedPost = this.posts()?.find((post:Post)=> post.title == this.searchedTitle)
   }
 }
