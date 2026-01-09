@@ -1,12 +1,11 @@
-import { Component, signal, inject, DestroyRef} from '@angular/core';
+import { Component, signal, inject} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
-import { Post } from '../post.model';
 
 @Component({
   selector: 'app-create-issue',
-  imports: [RouterModule,ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './create-issue.component.html',
   styleUrl: './create-issue.component.scss'
 })
@@ -16,7 +15,6 @@ export class CreateIssueComponent {
   isSuccess = signal(false)
 
   private httpClient = inject(HttpClient);
-  private destroyRef = inject(DestroyRef);
 
   private fb = inject(FormBuilder);
   postForm: FormGroup = this.fb.group({
@@ -43,8 +41,6 @@ export class CreateIssueComponent {
         this.isLoading.set(false);
       }
     })
-    } else {
-
     }
   }
 
