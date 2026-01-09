@@ -1,0 +1,27 @@
+<div>
+  @if(isFetching() && !error()){
+    <p>Loading...</p>
+  }
+  @if(error()){
+    <p>Error: {{error()}}</p>
+  }
+
+  <div>
+    <button routerLink="/issues">Back</button>
+  </div>
+
+  @if (post()) {
+    <div>
+      <h3>Title: {{post()?.title}}</h3>
+      <P>{{post()?.body}}</P>
+      <h4>Comments:</h4>
+      @for (comment of comments(); track $index) {
+        <div>
+          <h5>Name: {{comment.name}}</h5>
+          <h5>Email: {{comment.email}}</h5>
+          <p>{{comment.body}}</p>
+        </div>
+      }
+    </div>
+  }
+</div>
