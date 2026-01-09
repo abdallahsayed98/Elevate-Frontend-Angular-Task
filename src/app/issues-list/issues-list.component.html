@@ -1,0 +1,17 @@
+<div>
+  @if(isFetching() && !error()){
+    <p>Loading...</p>
+  }
+  @if(error()){
+    <p>Error: {{error()}}</p>
+  }
+
+  @for (post of posts(); track $index) {
+    <div>
+      <h4>Post: {{post.id}}</h4>
+      <h5>Title: {{post.title}}</h5>
+      <p>{{post.body}}</p>
+      <h5>User ID: {{post.userId}}</h5>
+    </div>
+  }
+</div>
