@@ -6,6 +6,9 @@
     <p>Error: {{error()}}</p>
   }
 
+  <div>
+    <button routerLink="/issues/new">New Issue</button>
+  </div>
   @for (post of posts(); track $index) {
     <a routerLink='/issues/{{post.id}}' routerLinkActive="active">
       <h4>Post: {{post.id}}</h4>
