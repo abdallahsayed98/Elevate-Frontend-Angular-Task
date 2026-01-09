@@ -17,10 +17,10 @@
           <input type="text" id="search" name="search" [(ngModel)]="searchedTitle" (change)="searchIssue()">
         </div>
         @if (searchedPost) {
-          <a routerLink='/issues/{{searchedPost.id}}' routerLinkActive="active">
+          <div>
             <h4>Post: {{searchedPost.id}}</h4>
             <h5>Title: {{searchedPost.title}}</h5>
-          </a>
+          </div>
         }
       }
   </div>
