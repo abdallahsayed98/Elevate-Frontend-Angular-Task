@@ -1,22 +1,22 @@
 <div>
   @if(isFetching() && !error()){
-    <p>Loading...</p>
+    <p class="loading-message">Loading...</p>
   }
   @if(error()){
-    <p>Error: {{error()}}</p>
+    <p class="error-message">Error: {{error()}}</p>
   }
 
-  <div>
+  <div class="back-button">
     <button routerLink="/issues">Back</button>
   </div>
 
   @if (post()) {
-    <div>
+    <div class="post-details">
       <h3>Title: {{post()?.title}}</h3>
       <P>{{post()?.body}}</P>
       <h4>Comments:</h4>
       @for (comment of comments(); track $index) {
-        <div>
+        <div class="comment-details">
           <h5>Name: {{comment.name}}</h5>
           <h5>Email: {{comment.email}}</h5>
           <p>{{comment.body}}</p>

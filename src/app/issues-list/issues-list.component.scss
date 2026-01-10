@@ -1,0 +1,111 @@
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+// Error and loading messages
+.error-message {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  color: var(--error-red, #dc3545);
+  background-color: rgba(220, 53, 69, 0.1);
+  border-left: 3px solid var(--error-red, #dc3545);
+}
+
+.loading-message {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-medium, #495057);
+}
+
+// Header section with New Issue button
+.new-issue-button {
+  margin-bottom: 1.5rem;
+
+  button {
+    margin-bottom: .2rem;
+  }
+}
+
+// Search section
+.search-container {
+  border: 1px solid var(--gray-border, #dee2e6) !important;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--gray-bg, #f8f9fa);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+
+  > div:first-of-type {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--gray-dark, #212529);
+    }
+
+    input {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  // Search result display
+  > div:last-of-type {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--white, #ffffff);
+    border-radius: 0.375rem;
+    border: 1px solid var(--gray-border, #dee2e6);
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Posts list
+a {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--white, #ffffff);
+  border: 1px solid var(--gray-border, #dee2e6);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+    border-color: var(--primary-blue, #007bff);
+  }
+
+  &.active {
+    border-color: var(--primary-blue, #007bff);
+    background-color: rgba(0, 123, 255, 0.05);
+  }
+
+  h4 {
+    color: var(--primary-blue, #007bff);
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    color: var(--gray-medium, #495057);
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}

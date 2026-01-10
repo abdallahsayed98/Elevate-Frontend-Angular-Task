@@ -1,9 +1,9 @@
 <div>
   @if(error()){
-    <p>Error: {{error()}}</p>
+    <p class="error-message">Error: {{error()}}</p>
   }
   @if(isSuccess()){
-    <p>Create Post Success</p>
+    <p class="success-message">Create Post Success</p>
   }
 </div>
 <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
